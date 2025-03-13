@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mon site</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="scss/style.css">
     <script src="https://kit.fontawesome.com/6e00538468.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,17 +14,17 @@
 
 <body>
     <header>
-        <div class="logo__container">
+        <div class="logo">
         <img src="Assets/images/logo/ohmyfood@2x.svg" alt="images logo ohmyfood">
         </div>
          
-        <div class="place__container"> <i class="fa-solid fa-location-dot"></i> 
+        <div class="place"> <i class="fa-solid fa-location-dot"></i> 
             Paris, Belleville 
         </div>    
     </header>
     
     <main>
-        <section class="grey__card">
+        <section class="section__one">
             <h1>Réservez le menu qui vous convient</h1> 
             <p> Découvrez des restaurants d'exception, sélectionnés par nos soins. </p>
             <button>Explorer nos restaurants</button>
@@ -32,7 +32,7 @@
 
         <section class="Fonctionnement">
             <h2>Fonctionnement</h2>
-        <div class="card__container">
+        <div class="cards">
             <div class="card">
                 <p><i class="fa-solid fa-mobile-screen-button"></i>Choisissez un restaurant</p>
             </div>
@@ -44,27 +44,26 @@
             </div>
         </div>
         </section>
-
         
         <section class="Restaurants">
             <h2>Restaurants</h2>
-            <div class="cards__container">
-            <article class="cards">
+            <div class="cards">
+            <article class="card">
                     <img src="Assets/images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg"  alt="image premier restaurant assiette avec un plat">
                     <h3>La palette du gout</h3>
                     <p>Ménilmontant</p>
             </article>
-            <article class="cards">
+            <article class="card">
                     <img src="Assets/images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg"  alt="image premier restaurant assiette avec un plat">
                     <h3>La note enchantée</h3>
                     <p>Charonne</p>
             </article>
-            <article class="cards">
+            <article class="card">
                     <img src="Assets/images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg"  alt="image premier restaurant assiette avec un plat">
                     <h3>A la française</h3>
                     <p>Cité Rouge</p>
             </article>
-            <article class="cards">
+            <article class="card">
                     <img src="Assets/images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg" alt="image premier restaurant assiette avec un plat">
                     <h3>Le délice des sens</h3>
                     <p>Folie-Méricourt</p>
@@ -72,6 +71,8 @@
             </div>
         </section>
     </main>
+
+
     <footer>
         <img src="Assets/images/logo/ohmyfood@2x.svg" alt="logo ohmyfood">
         <ul>

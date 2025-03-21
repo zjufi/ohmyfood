@@ -1,13 +1,30 @@
 body {
-  font-family: roboto;
+  font-family: "roboto";
   margin: 0%;
 }
 
-.logo {
+.logo__home {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.header__menu {
   display: flex;
   justify-content: center;
-  padding-top: 25px;
+  align-items: center;
+  position: relative;
   padding-bottom: 15px;
+  padding-top: 23px;
+}
+.header__menu .fa-solid {
+  font-size: x-large;
+  position: absolute;
+  left: 25px;
+  color: #353535;
+}
+.header__menu .logo {
+  width: 197px;
+  height: 36px;
 }
 
 .place {
@@ -127,6 +144,76 @@ body {
   margin: 0%;
 }
 
+.menu .card {
+  background-color: #F6F6F6;
+  border-top-left-radius: 35px;
+  border-top-right-radius: 35px;
+  width: 100%;
+  margin-top: -70px;
+  position: absolute;
+}
+.menu .cards__menu {
+  display: flex;
+  flex-direction: column;
+}
+.menu h1 {
+  font-family: "shrinkhand-regular";
+  font-family: "Shrikhand", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 28px;
+  margin-left: 15px;
+}
+.menu .fa-regular {
+  padding-left: 20px;
+  font-weight: 100;
+}
+.menu h2 {
+  font-family: "roboto", sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  margin-left: 15px;
+  display: inline-block;
+  border-bottom: #99E2D0 3px solid;
+  width: 40px;
+  padding-bottom: 5px;
+}
+.menu .card__menu {
+  background-color: white;
+  border-radius: 15px;
+  height: 69px;
+  margin-left: 15px;
+  margin-right: 15px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+.menu .card__menu .price__container {
+  display: flex;
+  justify-content: space-between;
+}
+.menu .card__menu .price {
+  margin-right: 13px;
+  margin-top: 8px;
+  font-weight: 500;
+}
+.menu h3 {
+  margin: 0%;
+  font-family: "roboto", sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  padding-left: 15px;
+  padding-top: 10px;
+}
+.menu p {
+  margin: 0%;
+  font-family: "roboto", sans-serif;
+  font-weight: 300;
+  font-size: 15px;
+  padding-left: 15px;
+  padding-top: 8px;
+}
+
 footer {
   background-color: #353535;
   color: white;
@@ -148,4 +235,13 @@ footer ul {
 }
 footer .fa-solid {
   padding-right: 8px;
+}
+
+.photo__restaurant {
+  width: 100%;
+  height: 275px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  display: flex;
+  justify-content: center;
 }/*# sourceMappingURL=style.css.map */

@@ -14,10 +14,10 @@ body {
 }
 
 
-    .logo__home {
-        padding-top: 20px;
-        padding-bottom: 20px;
-    }
+.logo__home {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
 
 
 
@@ -35,7 +35,7 @@ body {
         position: absolute;
         left: 25px;
         color: #353535;
-}
+    }
 
     .logo {
         width: 197px;
@@ -131,7 +131,7 @@ $grey-brackground: rgba(243, 243, 243, 1);
         @include column;
         align-items: center;
 
- 
+
         .card {
             width: 322.49px;
             height: 72.38px;
@@ -181,13 +181,13 @@ $grey-brackground: rgba(243, 243, 243, 1);
         border-top-right-radius: 15px;
         object-fit: cover;
     }
-    
+
     h3 {
         margin-top: 6px;
         margin-bottom: 5px;
         margin-left: 10px;
     }
-    
+
     .cards p {
         padding-left: 10px;
         margin: 0%;
@@ -197,9 +197,11 @@ $grey-brackground: rgba(243, 243, 243, 1);
 
 //* PAGES MENU RESTAURANTS  //*
 
+
+
 .photo__restaurant {
 
-   
+
     width: 100%;
     height: 275px;
     object-fit: cover;
@@ -211,32 +213,54 @@ $grey-brackground: rgba(243, 243, 243, 1);
 
 .menu {
 
-    
     .card {
-        background-color:#F6F6F6;
+        background-color: #F6F6F6;
         border-top-left-radius: 35px;
         border-top-right-radius: 35px;
         width: 100%;
         margin-top: -70px;
-       position:relative;
-       
+        position: relative;
 
-        h1 {
-            font-family: 'shrinkhand-regular';
-            font-family: "Shrikhand", serif;
-            font-weight: 400;
-            font-style: normal;
-            font-size: 28px;
-            margin: 15px;
-            padding-top: 15px;
-             
+
+        .card__title {
+            display: flex;
+            padding-top: 20px;
+            padding-left: 20px;
+            align-items: center;
+            gap: 15px;
         }
 
-        .fa-regular {
-            padding-left: 20px;
-            font-weight: 100;
-    
-    
+        h1 {
+            font-family: "Shrikhand", serif;
+            font-weight: 400;
+            font-size: xx-large;
+            margin: 0;
+
+        }
+
+        .heart {
+            padding-left: 50px;
+            padding-bottom: 5px;
+            font-size: xx-large;
+            display: inline-block;
+
+
+            .fa-heart {
+                background: linear-gradient(#9356DC, #FF79DA);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent !important;
+                display: inline-block;
+                border: 1px solid transparent;
+
+                &:hover {
+                    color: grey;
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: grey !important;
+                    display: inline-block;
+                    
+                }
+            }
+
         }
     }
 
@@ -244,6 +268,7 @@ $grey-brackground: rgba(243, 243, 243, 1);
     .cards__menu {
         display: flex;
         flex-direction: column;
+
 
         h2 {
             font-family: "roboto", sans-serif;
@@ -256,21 +281,28 @@ $grey-brackground: rgba(243, 243, 243, 1);
             padding-bottom: 5px;
         }
     }
-    
+
 
     .card__menu {
-        background-color:white;
+        background-color: white;
         border-radius: 15px;
         height: 69px;
-        margin-left : 15px;
+        margin-left: 15px;
         margin-right: 15px;
         display: flex;
-        flex-direction: column;
+        //flex-direction: column;
+        justify-content: space-between;
         margin-bottom: 15px;
         box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 15px;
         overflow: hidden;
         position: relative;
         transition: all 0.4s ease-in-out;
+
+        .card__description {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
 
 
 
@@ -282,16 +314,16 @@ $grey-brackground: rgba(243, 243, 243, 1);
             padding-left: 15px;
             padding-top: 10px;
         }
-    
-        p { 
+
+        p {
             margin: 0%;
             font-family: 'roboto', sans-serif;
             font-weight: 300;
             font-size: 15px;
             padding-left: 15px;
             padding-top: 8px;
-    
-    
+
+
         }
 
 
@@ -302,53 +334,52 @@ $grey-brackground: rgba(243, 243, 243, 1);
             gap: 10px;
             overflow: hidden;
             position: relative;
-            width : 100%;
+            width: 100%;
         }
 
         .price {
             margin-right: 13px;
             margin-top: 8px;
-            font-weight:500;
+            font-weight: 500;
         }
 
         .card__hover {
-            position: absolute;
+            // position: absolute;
             top: 0;
             right: 0;
             width: 0;
             height: 100%;
             overflow: hidden;
-            height: 200px;
-            background-color: #ff6600;
+            background-color: #99E2D0;
             transition: width 0.3s ease-out;
+
+            i {
+                color: white;
+                font-size: x-large;
+                display: flex;
+                justify-content: center;
+                padding-top: 22px;
+            }
         }
 
 
         &:hover .card__hover {
             right: 0;
             width: 70px;
-        
+
         }
-
-       
     }
-    
-
-
-
-
 
 }
 
-
-
 .menu__boutton {
-        @include flexbox-center;
-        background-color: #F6F6F6;
-        padding-top: 15px;
-        padding-bottom: 15px;
+    @include flexbox-center;
+    background-color: #F6F6F6;
+    padding-top: 15px;
+    padding-bottom: 15px;
 
-        button {
+    button {
+        font-family: "roboto", sans-serif;
         width: 218px;
         height: 50px;
         border-radius: 25px;
@@ -359,7 +390,7 @@ $grey-brackground: rgba(243, 243, 243, 1);
         margin-bottom: 35px;
         margin-top: 15px;
         font-weight: 550;
-        }
+    }
 }
 
 //*  FOOTER  //*
@@ -369,8 +400,8 @@ footer {
     background-color: #353535;
     color: white;
     padding-bottom: 25px;
-   // position: absolute;
-    
+    // position: absolute;
+
 
 
     img {
@@ -400,7 +431,7 @@ footer__menu {
     color: white;
     padding-bottom: 25px;
     position: absolute;
-    
+
 
 
     img {

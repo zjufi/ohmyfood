@@ -161,18 +161,37 @@ body {
   margin-top: -70px;
   position: relative;
 }
+.menu .card .card__title {
+  display: flex;
+  padding-top: 20px;
+  padding-left: 20px;
+  align-items: center;
+  gap: 15px;
+}
 .menu .card h1 {
-  font-family: "shrinkhand-regular";
   font-family: "Shrikhand", serif;
   font-weight: 400;
-  font-style: normal;
-  font-size: 28px;
-  margin: 15px;
-  padding-top: 15px;
+  font-size: xx-large;
+  margin: 0;
 }
-.menu .card .fa-regular {
-  padding-left: 20px;
-  font-weight: 100;
+.menu .card .heart {
+  padding-left: 50px;
+  padding-bottom: 5px;
+  font-size: xx-large;
+  display: inline-block;
+}
+.menu .card .heart .fa-heart {
+  background: linear-gradient(#9356DC, #FF79DA);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent !important;
+  display: inline-block;
+  border: 1px solid transparent;
+}
+.menu .card .heart .fa-heart:hover {
+  color: grey;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: grey !important;
+  display: inline-block;
 }
 .menu .cards__menu {
   display: flex;
@@ -195,12 +214,17 @@ body {
   margin-left: 15px;
   margin-right: 15px;
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   margin-bottom: 15px;
   box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 15px;
   overflow: hidden;
   position: relative;
   transition: all 0.4s ease-in-out;
+}
+.menu .card__menu .card__description {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }
 .menu .card__menu h3 {
   margin: 0%;
@@ -233,15 +257,20 @@ body {
   font-weight: 500;
 }
 .menu .card__menu .card__hover {
-  position: absolute;
   top: 0;
   right: 0;
   width: 0;
   height: 100%;
   overflow: hidden;
-  height: 200px;
-  background-color: #ff6600;
+  background-color: #99E2D0;
   transition: width 0.3s ease-out;
+}
+.menu .card__menu .card__hover i {
+  color: white;
+  font-size: x-large;
+  display: flex;
+  justify-content: center;
+  padding-top: 22px;
 }
 .menu .card__menu:hover .card__hover {
   right: 0;
@@ -256,6 +285,7 @@ body {
   padding-bottom: 15px;
 }
 .menu__boutton button {
+  font-family: "roboto", sans-serif;
   width: 218px;
   height: 50px;
   border-radius: 25px;

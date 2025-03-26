@@ -1,9 +1,69 @@
+//* LOADER  //*
+
+
+.loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    z-index: 9999;
+    animation: fadeOut 1s ease-in-out 3s forwards;
+    font-family: "shrikhand", sans-serif;
+
+
+    h1 {
+        font-family: "Shrikhand", serif;
+        font-weight: 300;
+        text-align: center;
+        position: relative;
+        //color: #9356DC;
+        background: linear-gradient(90deg, #9356DC, #FF79DA);
+        animation: l9 2s linear infinite;
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: wave 2s infinite ease-in-out;
+        // border: 20px solid transparent;
+    }
+
+}
+
+// Animation des vagues 
+@keyframes wave {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-5px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+// Disparition du loader
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+        visibility: hidden;
+        display: none;
+    }
+}
+
 body {
 
     font-family: 'roboto';
     margin: 0%;
 
 }
+
 
 //* HEADER //*
 
@@ -64,16 +124,81 @@ body {
 
 //* MAIN //*
 
-//* HOMEPAGE //*
+//* MIXINS //*
 
+@mixin animated-heart {
+    background-clip: text;
+    -webkit-background-clip: text;
+    display: inline-block;
+    font-weight: 300;
+    color: inherit;
+    opacity: 1;
+    border: 2px solid transparent;
 
-$grey-brackground: rgba(243, 243, 243, 1);
+    &:hover {
+        background: linear-gradient(#9356DC, #FF79DA);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent !important;
+        display: inline-block;
+        font-weight: 900;
+    }
+
+}
+
+@mixin button {
+    font-family: "roboto", sans-serif;
+    width: 218px;
+    height: 50px;
+    border-radius: 25px;
+    background: linear-gradient(#FF79DA, #9356DC);
+    border: none;
+    color: white;
+    box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
+    margin-bottom: 35px;
+    margin-top: 15px;
+    font-weight: 550;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+button::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.15);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    z-index: 2;
+    box-shadow: none;
+}
+
+button:hover {
+    box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.4);
+}
+
+button:hover::after {
+    opacity: 1;
+    box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.4);
+}
+
 
 @mixin margin_25 {
     margin-right: 25px;
     margin-left: 25px;
 }
 
+//* VARIABLE //*
+
+$grey-brackground: rgba(243, 243, 243, 1);
+
+//* HOMEPAGE //*
 
 .section__one {
     background-color: $grey-brackground;
@@ -96,16 +221,7 @@ $grey-brackground: rgba(243, 243, 243, 1);
 
 
     button {
-        width: 218px;
-        height: 50px;
-        border-radius: 25px;
-        background: linear-gradient(#FF79DA, #9356DC);
-        border: none;
-        color: white;
-        box-shadow: rgba(0, 0, 0, 0.2) 1px 2px 2px;
-        margin-bottom: 35px;
-        margin-top: 15px;
-        font-weight: 550;
+        @include button;
     }
 }
 
@@ -172,6 +288,40 @@ $grey-brackground: rgba(243, 243, 243, 1);
         background-color: white;
         margin-bottom: 25px;
         border-radius: 15px;
+        position: relative;
+        padding-bottom: 8px;
+    }
+
+    .division {
+        display: flex;
+        justify-content: space-between;
+
+        padding-right: 15px;
+
+        .heart {
+            display: inline-block;
+
+            .fa-heart {
+                @include animated-heart;
+                cursor: pointer;
+            }
+        }
+    }
+
+    .Nouveau {
+        position: absolute;
+        right: 15px;
+        top: 10px;
+        display: inline-block;
+        background-color: #99E2D0;
+        color: #008766;
+        padding: 10px 15px;
+        font-family: shrinked, sans-serif;
+        font-size: 14px;
+        border-radius: 2px;
+        box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
+        text-align: center;
+        font-weight: bold;
     }
 
     .cards img {
@@ -246,23 +396,14 @@ $grey-brackground: rgba(243, 243, 243, 1);
 
 
             .fa-heart {
-                background: linear-gradient(#9356DC, #FF79DA);
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent !important;
-                display: inline-block;
-                border: 1px solid transparent;
-
-                &:hover {
-                    color: grey;
-                    -webkit-background-clip: text;
-                    -webkit-text-fill-color: grey !important;
-                    display: inline-block;
-                    
-                }
+                @include animated-heart;
+                cursor: pointer;
             }
 
         }
     }
+
+
 
 
     .cards__menu {
@@ -316,13 +457,13 @@ $grey-brackground: rgba(243, 243, 243, 1);
         }
 
         p {
+            display: flex;
             margin: 0%;
             font-family: 'roboto', sans-serif;
             font-weight: 300;
             font-size: 15px;
             padding-left: 15px;
             padding-top: 8px;
-
 
         }
 
@@ -373,25 +514,21 @@ $grey-brackground: rgba(243, 243, 243, 1);
 }
 
 .menu__boutton {
-    @include flexbox-center;
+    display: flex;
+    justify-content: center;
     background-color: #F6F6F6;
     padding-top: 15px;
     padding-bottom: 15px;
 
     button {
-        font-family: "roboto", sans-serif;
-        width: 218px;
-        height: 50px;
-        border-radius: 25px;
-        background: linear-gradient(#FF79DA, #9356DC);
-        border: none;
-        color: white;
-        box-shadow: rgba(0, 0, 0, 0.2) 1px 2px 2px;
-        margin-bottom: 35px;
-        margin-top: 15px;
-        font-weight: 550;
+        @include button;
+
     }
+
+
 }
+
+
 
 //*  FOOTER  //*
 

@@ -1,0 +1,33 @@
+@mixin margin_25 {
+    margin-right: 25px;
+    margin-left: 25px;
+}
+
+@mixin column {
+    display: flex;
+    flex-direction: column;
+}
+
+@mixin flexbox-center {
+    display: flex;
+    justify-content: center;
+
+}
+
+@mixin button {
+    font-family: "roboto", sans-serif;
+    width: 218px;
+    height: 50px;
+    border-radius: 25px;
+    background: linear-gradient(#FF79DA, #9356DC);
+    border: none;
+    color: white;
+    box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
+    margin-bottom: 35px;
+    margin-top: 15px;
+    font-weight: 550;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    transition: box-shadow 0.3s ease-in-out;
+}

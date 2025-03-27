@@ -1,5 +1,6 @@
 //* LOADER  //*
 
+@import "mixins";
 
 .loader {
     display: flex;
@@ -13,22 +14,21 @@
     background-color: white;
     z-index: 9999;
     animation: fadeOut 1s ease-in-out 3s forwards;
-    font-family: "shrikhand", sans-serif;
+    font-family: "Shrikhand", sans-serif;
 
 
-    h1 {
-        font-family: "Shrikhand", serif;
+    span {
+
+        padding: 20px;
+        font-size: 72px;
         font-weight: 300;
         text-align: center;
-        position: relative;
-        //color: #9356DC;
+        //position: relative;
         background: linear-gradient(90deg, #9356DC, #FF79DA);
-        animation: l9 2s linear infinite;
         background-clip: text;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         animation: wave 2s infinite ease-in-out;
-        // border: 20px solid transparent;
     }
 
 }
@@ -40,7 +40,7 @@
     }
 
     50% {
-        transform: translateY(-5px);
+        transform: translateY(-55px);
     }
 
     100% {
@@ -67,11 +67,7 @@ body {
 
 //* HEADER //*
 
-@mixin flexbox-center {
-    display: flex;
-    justify-content: center;
 
-}
 
 
 .logo__home {
@@ -122,9 +118,19 @@ body {
 }
 
 
+
 //* MAIN //*
 
 //* MIXINS //*
+@keyframes heart {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
 
 @mixin animated-heart {
     background-clip: text;
@@ -132,8 +138,9 @@ body {
     display: inline-block;
     font-weight: 300;
     color: inherit;
-    opacity: 1;
+
     border: 2px solid transparent;
+
 
     &:hover {
         background: linear-gradient(#9356DC, #FF79DA);
@@ -142,27 +149,13 @@ body {
         -webkit-text-fill-color: transparent !important;
         display: inline-block;
         font-weight: 900;
+        animation: heart 0.3s ease-in-out;
+
     }
 
 }
 
-@mixin button {
-    font-family: "roboto", sans-serif;
-    width: 218px;
-    height: 50px;
-    border-radius: 25px;
-    background: linear-gradient(#FF79DA, #9356DC);
-    border: none;
-    color: white;
-    box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
-    margin-bottom: 35px;
-    margin-top: 15px;
-    font-weight: 550;
-    position: relative;
-    z-index: 1;
-    overflow: hidden;
-    transition: box-shadow 0.3s ease-in-out;
-}
+
 
 button::after {
     content: "";
@@ -189,10 +182,7 @@ button:hover::after {
 }
 
 
-@mixin margin_25 {
-    margin-right: 25px;
-    margin-left: 25px;
-}
+
 
 //* VARIABLE //*
 
@@ -225,10 +215,7 @@ $grey-brackground: rgba(243, 243, 243, 1);
     }
 }
 
-@mixin column {
-    display: flex;
-    flex-direction: column;
-}
+
 
 .Fonctionnement {
     margin-bottom: 35px;
@@ -371,6 +358,41 @@ $grey-brackground: rgba(243, 243, 243, 1);
         margin-top: -70px;
         position: relative;
 
+        .animation_menu {
+            display: inline;
+
+            .M1 {
+                opacity: 0;
+                animation: fadeInUp 0.8s ease-out forwards;
+                animation-delay: 0.4s;
+            }
+
+            .M2 {
+                opacity: 0;
+                animation: fadeInUp 0.8s ease-out forwards;
+                animation-delay: 0.9s;
+            }
+
+            .M3 {
+                opacity: 0;
+                animation: fadeInUp 0.8s ease-out forwards;
+                animation-delay: 1.3s;
+            }
+
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
 
         .card__title {
             display: flex;
@@ -411,6 +433,11 @@ $grey-brackground: rgba(243, 243, 243, 1);
         flex-direction: column;
 
 
+
+
+
+
+
         h2 {
             font-family: "roboto", sans-serif;
             font-weight: 300;
@@ -421,6 +448,8 @@ $grey-brackground: rgba(243, 243, 243, 1);
             width: 40px;
             padding-bottom: 5px;
         }
+
+
     }
 
 
@@ -436,15 +465,20 @@ $grey-brackground: rgba(243, 243, 243, 1);
         margin-bottom: 15px;
         box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 15px;
         overflow: hidden;
-        position: relative;
+        // position: relative;
         transition: all 0.4s ease-in-out;
 
-        .card__description {
-            display: flex;
-            flex-direction: column;
-            width: 100%;
-        }
 
+
+
+
+        .card__description {
+            // display: flex;
+            //flex-direction: column;
+            width: 100%;
+            overflow: hidden;
+
+        }
 
 
         h3 {
@@ -454,16 +488,27 @@ $grey-brackground: rgba(243, 243, 243, 1);
             font-size: 18px;
             padding-left: 15px;
             padding-top: 10px;
+
+            overflow: hidden;
+            text-overflow: ellipsis;
+            text-wrap: nowrap;
+
+
         }
 
         p {
-            display: flex;
+            // display: flex;
             margin: 0%;
             font-family: 'roboto', sans-serif;
             font-weight: 300;
             font-size: 15px;
             padding-left: 15px;
             padding-top: 8px;
+
+            overflow: hidden;
+            text-overflow: ellipsis;
+            text-wrap: nowrap;
+
 
         }
 
@@ -474,8 +519,8 @@ $grey-brackground: rgba(243, 243, 243, 1);
             justify-content: space-between;
             gap: 10px;
             overflow: hidden;
-            position: relative;
-            width: 100%;
+
+
         }
 
         .price {
@@ -554,6 +599,11 @@ footer {
         gap: 8px;
         font-size: small;
         padding-left: 25px;
+
+        a {
+            text-decoration: none;
+            color: white;
+        }
     }
 
     .fa-solid {

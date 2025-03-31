@@ -67,55 +67,60 @@ body {
 
 //* HEADER //*
 
+.homepage__header {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+
+    .logo {
+        padding-top: 20px;
+        padding-bottom: 15px;
+        width: 45%;
+    }
 
 
+    .place {
+        @include flexbox-center;
+        background-color: rgba(234, 234, 234, 1);
+        width: 100%;
+        height: 50px;
+        box-shadow:
+            0 4px 4px 0 rgba(0, 0, 0, 0.25),
+            inset 0 2px 4px 0 rgba(0, 0, 0, 0.15);
+        align-items: center;
+        font-weight: 500;
+        color: rgba(53, 53, 53, 1);
 
-.logo__home {
-    padding-top: 20px;
-    padding-bottom: 20px;
+        .fa-solid {
+            padding-right: 8px;
+        }
+    }
 }
 
 
-
-.header__menu {
-
+.menu__header {
     display: flex;
     justify-content: center;
-    align-items: center;
+    //align-items: center;
     position: relative;
-    padding-bottom: 15px;
-    padding-top: 23px;
 
     .fa-solid {
-        font-size: x-large;
+        font-size: medium;
         position: absolute;
-        left: 25px;
+        left: 15px;
         color: #353535;
+        padding-top: 25px;
     }
 
     .logo {
-        width: 197px;
-        height: 36px;
+        padding-top: 20px;
+        padding-bottom: 15px;
+        width: 45%;
     }
-
 }
 
 
-
-.place {
-    @include flexbox-center;
-    background-color: rgba(234, 234, 234, 1);
-    height: 50px;
-    box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 0px;
-    align-items: center;
-    font-weight: 500;
-    color: rgba(53, 53, 53, 1);
-
-    .fa-solid {
-        padding-right: 8px;
-    }
-
-}
 
 
 
@@ -198,50 +203,80 @@ $grey-brackground: rgba(243, 243, 243, 1);
     width: 100%;
 
     h1 {
-        padding-top: 20px;
+
         text-align: center;
-        @include margin_25;
+        display: flex;
+        flex-wrap: nowrap;
+        padding: 35px 50px 0px 50px;
+        margin: 0;
+        font-size: 24px;
     }
 
     p {
         text-align: center;
         font-weight: 300;
-        @include margin_25;
+        font-size: 18px;
+        margin: 0%;
+        padding-top: 20px;
     }
 
 
     button {
         @include button;
+        margin-top: 30px;
+        margin-bottom: 60px;
     }
 }
 
 
 
 .Fonctionnement {
-    margin-bottom: 35px;
+    margin-bottom: 50px;
 
     h2 {
-        margin-left: 10px;
+        margin: 0px;
+        padding-left: 10px;
+        padding-top: 40px;
+        padding-bottom: 25px;
     }
 
     .fa-solid {
         color: grey;
-        padding-right: 8px;
+        padding-right: 25px;
+
+
 
     }
 
     .cards {
         @include column;
         align-items: center;
-
+        gap: 15px;
 
         .card {
-            width: 322.49px;
+            width: 80%;
             height: 72.38px;
             background-color: #F6F6F6;
             border-radius: 20px;
             box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 15px;
-            margin: 12px;
+            margin: 0;
+            display: flex;
+
+            .number {
+                background-color: #9356DC;
+                border-radius: 50%;
+                padding-top: 3px;
+                width: 24px;
+                height: 20px;
+                color: white;
+                text-align: center;
+                margin-left: -10px;
+                margin-top: 23px;
+                margin-right: 20px;
+                font-weight: 500;
+                font-size: 14px;
+
+            }
         }
 
         .card p {
@@ -254,13 +289,15 @@ $grey-brackground: rgba(243, 243, 243, 1);
 
 .Restaurants {
     background-color: $grey-brackground;
-    padding-top: 25px;
-    padding-bottom: 25px;
+    padding-bottom: 60px;
     display: flex;
     flex-direction: column;
 
     h2 {
-        margin-left: 10px;
+        margin: 0;
+        padding-left: 10px;
+        padding-bottom: 25px;
+        padding-top: 40px;
     }
 
 
@@ -273,7 +310,7 @@ $grey-brackground: rgba(243, 243, 243, 1);
         width: 98%;
         height: 251px;
         background-color: white;
-        margin-bottom: 25px;
+        // margin-bottom: 25px;
         border-radius: 15px;
         position: relative;
         padding-bottom: 8px;
@@ -337,8 +374,6 @@ $grey-brackground: rgba(243, 243, 243, 1);
 
 
 .photo__restaurant {
-
-
     width: 100%;
     height: 275px;
     object-fit: cover;
@@ -355,7 +390,7 @@ $grey-brackground: rgba(243, 243, 243, 1);
         border-top-left-radius: 35px;
         border-top-right-radius: 35px;
         width: 100%;
-        margin-top: -70px;
+        margin-top: -50px;
         position: relative;
 
         .animation_menu {
@@ -396,16 +431,17 @@ $grey-brackground: rgba(243, 243, 243, 1);
 
         .card__title {
             display: flex;
+            justify-content: space-between;
             padding-top: 20px;
             padding-left: 20px;
-            align-items: center;
-            gap: 15px;
+            padding-right: 30px;
+            //align-items: center;
+            //gap: 15px;
         }
 
         h1 {
             font-family: "Shrikhand", serif;
             font-weight: 400;
-            font-size: xx-large;
             margin: 0;
 
         }
@@ -433,11 +469,6 @@ $grey-brackground: rgba(243, 243, 243, 1);
         flex-direction: column;
 
 
-
-
-
-
-
         h2 {
             font-family: "roboto", sans-serif;
             font-weight: 300;
@@ -448,8 +479,6 @@ $grey-brackground: rgba(243, 243, 243, 1);
             width: 40px;
             padding-bottom: 5px;
         }
-
-
     }
 
 
@@ -467,9 +496,6 @@ $grey-brackground: rgba(243, 243, 243, 1);
         overflow: hidden;
         // position: relative;
         transition: all 0.4s ease-in-out;
-
-
-
 
 
         .card__description {
@@ -562,15 +588,13 @@ $grey-brackground: rgba(243, 243, 243, 1);
     display: flex;
     justify-content: center;
     background-color: #F6F6F6;
-    padding-top: 15px;
-    padding-bottom: 15px;
+    padding-top: 25px;
+    padding-bottom: 40px;
 
     button {
-        @include button;
+        @include button(186px);
 
     }
-
-
 }
 
 

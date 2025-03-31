@@ -47,42 +47,48 @@ body {
   margin: 0%;
 }
 
-.logo__home {
-  padding-top: 20px;
-  padding-bottom: 20px;
-}
-
-.header__menu {
+.homepage__header {
   display: flex;
   justify-content: center;
+  flex-direction: column;
   align-items: center;
-  position: relative;
+}
+.homepage__header .logo {
+  padding-top: 20px;
   padding-bottom: 15px;
-  padding-top: 23px;
+  width: 45%;
 }
-.header__menu .fa-solid {
-  font-size: x-large;
-  position: absolute;
-  left: 25px;
-  color: #353535;
-}
-.header__menu .logo {
-  width: 197px;
-  height: 36px;
-}
-
-.place {
+.homepage__header .place {
   display: flex;
   justify-content: center;
   background-color: rgb(234, 234, 234);
+  width: 100%;
   height: 50px;
-  box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 0px;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25), inset 0 2px 4px 0 rgba(0, 0, 0, 0.15);
   align-items: center;
   font-weight: 500;
   color: rgb(53, 53, 53);
 }
-.place .fa-solid {
+.homepage__header .place .fa-solid {
   padding-right: 8px;
+}
+
+.menu__header {
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+.menu__header .fa-solid {
+  font-size: medium;
+  position: absolute;
+  left: 15px;
+  color: #353535;
+  padding-top: 25px;
+}
+.menu__header .logo {
+  padding-top: 20px;
+  padding-bottom: 15px;
+  width: 45%;
 }
 
 @keyframes heart {
@@ -126,57 +132,80 @@ button:hover::after {
   width: 100%;
 }
 .section__one h1 {
-  padding-top: 20px;
   text-align: center;
-  margin-right: 25px;
-  margin-left: 25px;
+  display: flex;
+  flex-wrap: nowrap;
+  padding: 35px 50px 0px 50px;
+  margin: 0;
+  font-size: 24px;
 }
 .section__one p {
   text-align: center;
   font-weight: 300;
-  margin-right: 25px;
-  margin-left: 25px;
+  font-size: 18px;
+  margin: 0%;
+  padding-top: 20px;
 }
 .section__one button {
-  font-family: "roboto", sans-serif;
   width: 218px;
+  font-family: "roboto", sans-serif;
   height: 50px;
   border-radius: 25px;
   background: linear-gradient(#FF79DA, #9356DC);
   border: none;
   color: white;
   box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
-  margin-bottom: 35px;
-  margin-top: 15px;
-  font-weight: 550;
+  font-weight: 500;
+  font-size: 16px;
   position: relative;
   z-index: 1;
   overflow: hidden;
   transition: box-shadow 0.3s ease-in-out;
+  margin-top: 30px;
+  margin-bottom: 60px;
 }
 
 .Fonctionnement {
-  margin-bottom: 35px;
+  margin-bottom: 50px;
 }
 .Fonctionnement h2 {
-  margin-left: 10px;
+  margin: 0px;
+  padding-left: 10px;
+  padding-top: 40px;
+  padding-bottom: 25px;
 }
 .Fonctionnement .fa-solid {
   color: grey;
-  padding-right: 8px;
+  padding-right: 25px;
 }
 .Fonctionnement .cards {
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 15px;
 }
 .Fonctionnement .cards .card {
-  width: 322.49px;
+  width: 80%;
   height: 72.38px;
   background-color: #F6F6F6;
   border-radius: 20px;
   box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 15px;
-  margin: 12px;
+  margin: 0;
+  display: flex;
+}
+.Fonctionnement .cards .card .number {
+  background-color: #9356DC;
+  border-radius: 50%;
+  padding-top: 3px;
+  width: 24px;
+  height: 20px;
+  color: white;
+  text-align: center;
+  margin-left: -10px;
+  margin-top: 23px;
+  margin-right: 20px;
+  font-weight: 500;
+  font-size: 14px;
 }
 .Fonctionnement .cards .card p {
   display: flex;
@@ -187,13 +216,15 @@ button:hover::after {
 
 .Restaurants {
   background-color: rgb(243, 243, 243);
-  padding-top: 25px;
-  padding-bottom: 25px;
+  padding-bottom: 60px;
   display: flex;
   flex-direction: column;
 }
 .Restaurants h2 {
-  margin-left: 10px;
+  margin: 0;
+  padding-left: 10px;
+  padding-bottom: 25px;
+  padding-top: 40px;
 }
 .Restaurants .cards {
   display: flex;
@@ -204,7 +235,6 @@ button:hover::after {
   width: 98%;
   height: 251px;
   background-color: white;
-  margin-bottom: 25px;
   border-radius: 15px;
   position: relative;
   padding-bottom: 8px;
@@ -282,7 +312,7 @@ button:hover::after {
   border-top-left-radius: 35px;
   border-top-right-radius: 35px;
   width: 100%;
-  margin-top: -70px;
+  margin-top: -50px;
   position: relative;
 }
 .menu .card .animation_menu {
@@ -315,15 +345,14 @@ button:hover::after {
 }
 .menu .card .card__title {
   display: flex;
+  justify-content: space-between;
   padding-top: 20px;
   padding-left: 20px;
-  align-items: center;
-  gap: 15px;
+  padding-right: 30px;
 }
 .menu .card h1 {
   font-family: "Shrikhand", serif;
   font-weight: 400;
-  font-size: xx-large;
   margin: 0;
 }
 .menu .card .heart {
@@ -440,21 +469,20 @@ button:hover::after {
   display: flex;
   justify-content: center;
   background-color: #F6F6F6;
-  padding-top: 15px;
-  padding-bottom: 15px;
+  padding-top: 25px;
+  padding-bottom: 40px;
 }
 .menu__boutton button {
+  width: 186px;
   font-family: "roboto", sans-serif;
-  width: 218px;
   height: 50px;
   border-radius: 25px;
   background: linear-gradient(#FF79DA, #9356DC);
   border: none;
   color: white;
   box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
-  margin-bottom: 35px;
-  margin-top: 15px;
-  font-weight: 550;
+  font-weight: 500;
+  font-size: 16px;
   position: relative;
   z-index: 1;
   overflow: hidden;

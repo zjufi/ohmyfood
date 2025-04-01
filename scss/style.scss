@@ -76,7 +76,8 @@ body {
     .logo {
         padding-top: 20px;
         padding-bottom: 15px;
-        width: 45%;
+        
+        
     }
 
 
@@ -116,7 +117,7 @@ body {
     .logo {
         padding-top: 20px;
         padding-bottom: 15px;
-        width: 45%;
+        
     }
 }
 
@@ -210,6 +211,12 @@ $grey-brackground: rgba(243, 243, 243, 1);
         padding: 35px 50px 0px 50px;
         margin: 0;
         font-size: 24px;
+
+        @media (min-width: 1440px) {
+            
+            font-size: 40px;
+            font-weight: 700;
+        }
     }
 
     p {
@@ -225,6 +232,10 @@ $grey-brackground: rgba(243, 243, 243, 1);
         @include button;
         margin-top: 30px;
         margin-bottom: 60px;
+
+        @media (min-width: 1440px) {
+            margin-bottom: 40px;
+        }
     }
 }
 
@@ -238,6 +249,10 @@ $grey-brackground: rgba(243, 243, 243, 1);
         padding-left: 10px;
         padding-top: 40px;
         padding-bottom: 25px;
+
+        @media (min-width: 1440px) {
+            padding-left: 187px;
+        }
     }
 
     .fa-solid {
@@ -252,6 +267,13 @@ $grey-brackground: rgba(243, 243, 243, 1);
         @include column;
         align-items: center;
         gap: 15px;
+
+        @media (min-width: 1440px) {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            gap: 35px;
+        }
 
         .card {
             width: 80%;
@@ -277,6 +299,10 @@ $grey-brackground: rgba(243, 243, 243, 1);
                 font-size: 14px;
 
             }
+
+            @media (min-width: 1440px) {
+                width: 23%;
+            }
         }
 
         .card p {
@@ -291,19 +317,33 @@ $grey-brackground: rgba(243, 243, 243, 1);
     background-color: $grey-brackground;
     padding-bottom: 60px;
     display: flex;
-    flex-direction: column;
+    flex-direction: column; 
+
 
     h2 {
         margin: 0;
         padding-left: 10px;
         padding-bottom: 25px;
         padding-top: 40px;
+
+        @media (min-width: 1440px) {
+            padding-left: 187px;
+        }
     }
 
 
     .cards {
         @include column;
         align-items: center;
+        gap: 20px;
+
+        @media (min-width: 1440px) {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+            justify-content: center;
+            gap: 52px;
+        }
     }
 
     .card {
@@ -314,6 +354,10 @@ $grey-brackground: rgba(243, 243, 243, 1);
         border-radius: 15px;
         position: relative;
         padding-bottom: 8px;
+
+        @media (min-width: 1440px) {
+            width: 35%;
+        }
     }
 
     .division {
@@ -381,17 +425,32 @@ $grey-brackground: rgba(243, 243, 243, 1);
     justify-content: center;
 
 
+    @media (min-width: 1440px) {
+        height: 383px;
+        
+    }
+
 }
 
 .menu {
+    
+    @media (min-width: 1440px) {
+        display: flex;
+        justify-content: center;
+        
+    }
 
     .card {
         background-color: #F6F6F6;
-        border-top-left-radius: 35px;
-        border-top-right-radius: 35px;
+        border-top-left-radius: 40px;
+        border-top-right-radius: 40px;
         width: 100%;
         margin-top: -50px;
         position: relative;
+
+        @media (min-width: 1440px) {
+            width: 80%;
+        }
 
         .animation_menu {
             display: inline;
@@ -437,6 +496,13 @@ $grey-brackground: rgba(243, 243, 243, 1);
             padding-right: 30px;
             //align-items: center;
             //gap: 15px;
+
+            @media (min-width:1440px) {
+                display: flex;
+                justify-content: center;
+                padding-top:40px;
+                padding-bottom: 20px;
+            }
         }
 
         h1 {
@@ -468,6 +534,16 @@ $grey-brackground: rgba(243, 243, 243, 1);
         display: flex;
         flex-direction: column;
 
+        @media (min-width:1440px) {
+            margin-left: 200px;
+            margin-right: 200px;
+            margin-bottom: 20px;
+
+
+        }
+
+        
+
 
         h2 {
             font-family: "roboto", sans-serif;
@@ -496,6 +572,7 @@ $grey-brackground: rgba(243, 243, 243, 1);
         overflow: hidden;
         // position: relative;
         transition: all 0.4s ease-in-out;
+        
 
 
         .card__description {
@@ -587,7 +664,6 @@ $grey-brackground: rgba(243, 243, 243, 1);
 .menu__boutton {
     display: flex;
     justify-content: center;
-    background-color: #F6F6F6;
     padding-top: 25px;
     padding-bottom: 40px;
 
@@ -606,61 +682,63 @@ footer {
     background-color: #353535;
     color: white;
     padding-bottom: 25px;
-    // position: absolute;
-
-
-
-    img {
-        filter: invert(1);
-        width: 25%;
-        padding-top: 25px;
-        padding-left: 25px;
-    }
-
-    ul {
-        list-style: none;
+    
+     .nav__footer {
         @include column;
         gap: 8px;
-        font-size: small;
-        padding-left: 25px;
 
-        a {
-            text-decoration: none;
-            color: white;
+        @media (min-width: 1440px) {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: flex-end;
+            margin-right: 90px;
+            gap: 50px;
+        }
+
+        img {
+            filter: invert(1);
+            width: 20%;
+            padding-top: 25px;
+            padding-left: 25px;
+
+            @media (min-width: 1440px) {
+                width: 6%;
+                order: 1;
+                
+            }
+    
+        }
+    
+    
+        .fa-solid {
+            padding-right: 8px;
+        }
+
+
+
+        ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            font-size: small;
+            padding-left: 25px;
+    
+            a {
+                text-decoration: none;
+                color: white;
+            }
+        
+            @media (min-width: 1440px) {
+                display: flex;
+                flex-direction: row;
+                padding-top: 20px;
+                gap: 20px;
+            }
+    
         }
     }
-
-    .fa-solid {
-        padding-right: 8px;
-    }
 }
 
 
-footer__menu {
-
-    background-color: #353535;
-    color: white;
-    padding-bottom: 25px;
-    position: absolute;
-
-
-
-    img {
-        filter: invert(1);
-        width: 25%;
-        padding-top: 25px;
-        padding-left: 25px;
-    }
-
-    ul {
-        list-style: none;
-        @include column;
-        gap: 8px;
-        font-size: small;
-        padding-left: 25px;
-    }
-
-    .fa-solid {
-        padding-right: 8px;
-    }
-}

@@ -138,29 +138,6 @@ body {
     }
 }
 
-@mixin animated-heart {
-    background-clip: text;
-    -webkit-background-clip: text;
-    display: inline-block;
-    font-weight: 300;
-    color: inherit;
-
-    border: 2px solid transparent;
-
-
-    &:hover {
-        background: linear-gradient(#9356DC, #FF79DA);
-        background-clip: text;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent !important;
-        display: inline-block;
-        font-weight: 900;
-        animation: heart 0.3s ease-in-out;
-
-    }
-
-}
-
 
 
 button::after {

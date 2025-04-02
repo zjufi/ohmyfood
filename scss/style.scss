@@ -1,21 +1,28 @@
-//* LOADER  //*
+
+body {
+
+    font-family: 'roboto';
+    margin: 0%;
+
+}
 
 @import "mixins";
+
+
+
+//* LOADER  //*
 
 .loader {
     display: flex;
     justify-content: center;
     align-items: center;
     position: fixed;
-    top: 0;
-    left: 0;
+    z-index: 9999;
     width: 100%;
     height: 100%;
     background-color: white;
-    z-index: 9999;
-    animation: fadeOut 1s ease-in-out 3s forwards;
+    animation: fadeOut 1s ease-in-out 2s forwards;
     font-family: "Shrikhand", sans-serif;
-
 
     span {
 
@@ -23,17 +30,14 @@
         font-size: 72px;
         font-weight: 300;
         text-align: center;
-        //position: relative;
         background: linear-gradient(90deg, #9356DC, #FF79DA);
         background-clip: text;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         animation: wave 2s infinite ease-in-out;
     }
-
 }
 
-// Animation des vagues 
 @keyframes wave {
     0% {
         transform: translateY(0);
@@ -48,20 +52,12 @@
     }
 }
 
-// Disparition du loader
 @keyframes fadeOut {
     to {
         opacity: 0;
         visibility: hidden;
         display: none;
     }
-}
-
-body {
-
-    font-family: 'roboto';
-    margin: 0%;
-
 }
 
 
@@ -76,8 +72,6 @@ body {
     .logo {
         padding-top: 20px;
         padding-bottom: 15px;
-        
-        
     }
 
 
@@ -103,8 +97,6 @@ body {
 .menu__header {
     display: flex;
     justify-content: center;
-    //align-items: center;
-    position: relative;
 
     .fa-solid {
         font-size: medium;
@@ -124,7 +116,6 @@ body {
 
 
 
-
 //* MAIN //*
 
 //* MIXINS //*
@@ -137,8 +128,6 @@ body {
         opacity: 1;
     }
 }
-
-
 
 button::after {
     content: "";
@@ -156,7 +145,7 @@ button::after {
 }
 
 button:hover {
-    box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.4);
+    box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.4);
 }
 
 button:hover::after {
@@ -164,12 +153,11 @@ button:hover::after {
     box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.4);
 }
 
-
-
-
 //* VARIABLE //*
 
 $grey-brackground: rgba(243, 243, 243, 1);
+
+
 
 //* HOMEPAGE //*
 
@@ -214,6 +202,7 @@ $grey-brackground: rgba(243, 243, 243, 1);
             margin-bottom: 40px;
         }
     }
+
 }
 
 
@@ -235,9 +224,6 @@ $grey-brackground: rgba(243, 243, 243, 1);
     .fa-solid {
         color: grey;
         padding-right: 25px;
-
-
-
     }
 
     .cards {

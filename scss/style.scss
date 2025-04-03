@@ -24,7 +24,7 @@ body {
     span {
 
         padding: 20px;
-        font-size: 72px;
+        font-size: 50px;
         font-weight: 300;
         text-align: center;
         background: linear-gradient(90deg, #9356DC, #FF79DA);
@@ -32,8 +32,14 @@ body {
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         animation: wave 2s infinite ease-in-out;
+
+        @media (min-width: 768px) {
+            font-size: 72px;
+        }
     }
 }
+
+
 
 @keyframes wave {
     0% {
@@ -126,6 +132,18 @@ body {
     }
 }
 
+@keyframes heart2 {
+    0% {
+        opacity: 0;
+        scale:0; 
+    }
+
+    100% {
+        opacity: 1;
+        scale:1;
+    }
+}
+
 button::after {
     content: "";
     position: absolute;
@@ -150,9 +168,11 @@ button:hover::after {
     box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.4);
 }
 
+
+
 //* VARIABLE //*
 
-$grey-brackground:  #F6F6F6;
+$grey-brackground: #F6F6F6;
 $green-color: #99E2D0;
 
 
@@ -175,7 +195,7 @@ $green-color: #99E2D0;
         margin: 0;
         font-size: 24px;
 
-        @media (min-width: 1440px) {
+        @media (min-width: 1024px) {
 
             font-size: 40px;
             font-weight: 700;
@@ -196,7 +216,7 @@ $green-color: #99E2D0;
         margin-top: 30px;
         margin-bottom: 60px;
 
-        @media (min-width: 1440px) {
+        @media (min-width: 1024px) {
             margin-bottom: 40px;
         }
     }
@@ -214,22 +234,19 @@ $green-color: #99E2D0;
         padding-top: 40px;
         padding-bottom: 25px;
 
-        @media (min-width: 1440px) {
+        @media (min-width: 1024px) {
             padding-left: 187px;
         }
     }
 
-    .fa-solid {
-        color: grey;
-        padding-right: 25px;
-    }
+
 
     .cards {
         @include column;
         align-items: center;
         gap: 15px;
 
-        @media (min-width: 1440px) {
+        @media (min-width: 1024px) {
             display: flex;
             flex-direction: row;
             justify-content: center;
@@ -244,6 +261,10 @@ $green-color: #99E2D0;
             box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 15px;
             margin: 0;
             display: flex;
+
+            @media (min-width: 768px) {
+                width:50%;
+            }
 
             .number {
                 background-color: #9356DC;
@@ -261,10 +282,21 @@ $green-color: #99E2D0;
 
             }
 
-            @media (min-width: 1440px) {
+            .fa-solid {
+                color: grey;
+                padding-right: 25px;
+            }
+
+            @media (min-width: 1024px) {
                 width: 23%;
             }
         }
+
+
+        .card:hover .fa-solid {
+            color: #9356DC;
+        }
+
 
         .card p {
             @include flexbox-center;
@@ -272,6 +304,10 @@ $green-color: #99E2D0;
             font-weight: 500;
         }
     }
+}
+
+.Fonctionnement:hover .fa-solid {
+    color: violet;
 }
 
 .Restaurants {
@@ -287,7 +323,7 @@ $green-color: #99E2D0;
         padding-bottom: 25px;
         padding-top: 40px;
 
-        @media (min-width: 1440px) {
+        @media (min-width: 1024px) {
             padding-left: 187px;
         }
     }
@@ -297,8 +333,9 @@ $green-color: #99E2D0;
         @include column;
         align-items: center;
         gap: 20px;
+        margin: 5px;
 
-        @media (min-width: 1440px) {
+        @media (min-width: 1024px) {
             display: flex;
             flex-wrap: wrap;
             flex-direction: row;
@@ -311,12 +348,11 @@ $green-color: #99E2D0;
         width: 98%;
         height: 251px;
         background-color: white;
-        // margin-bottom: 25px;
         border-radius: 15px;
         position: relative;
         padding-bottom: 8px;
 
-        @media (min-width: 1440px) {
+        @media (min-width: 1024px) {
             width: 35%;
         }
     }
@@ -328,7 +364,7 @@ $green-color: #99E2D0;
 
         .heart {
             display: inline-block;
-
+            
             .fa-heart {
                 @include animated-heart;
                 cursor: pointer;
@@ -388,7 +424,7 @@ $green-color: #99E2D0;
     justify-content: center;
 
 
-    @media (min-width: 1440px) {
+    @media (min-width: 1024px) {
         height: 383px;
     }
 
@@ -396,7 +432,7 @@ $green-color: #99E2D0;
 
 .menu {
 
-    @media (min-width: 1440px) {
+    @media (min-width: 1024px) {
         display: flex;
         justify-content: center;
     }
@@ -409,7 +445,7 @@ $green-color: #99E2D0;
         margin-top: -50px;
         position: relative;
 
-        @media (min-width: 1440px) {
+        @media (min-width: 1024px) {
             width: 80%;
         }
 
@@ -458,7 +494,7 @@ $green-color: #99E2D0;
             //align-items: center;
             //gap: 15px;
 
-            @media (min-width:1440px) {
+            @media (min-width:1024px) {
                 display: flex;
                 justify-content: center;
                 padding-top: 40px;
@@ -495,7 +531,7 @@ $green-color: #99E2D0;
         display: flex;
         flex-direction: column;
 
-        @media (min-width:1440px) {
+        @media (min-width:1024px) {
             margin-left: 200px;
             margin-right: 200px;
             margin-bottom: 20px;
@@ -626,7 +662,7 @@ footer {
         @include column;
         gap: 8px;
 
-        @media (min-width: 1440px) {
+        @media (min-width: 1024px) {
             display: flex;
             flex-direction: row;
             align-items: center;
@@ -641,7 +677,7 @@ footer {
             padding-top: 25px;
             padding-left: 25px;
 
-            @media (min-width: 1440px) {
+            @media (min-width: 1024px) {
                 width: 6%;
                 order: 1;
 
@@ -669,7 +705,7 @@ footer {
                 color: white;
             }
 
-            @media (min-width: 1440px) {
+            @media (min-width: 1024px) {
                 display: flex;
                 flex-direction: row;
                 padding-top: 20px;

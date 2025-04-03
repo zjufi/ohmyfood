@@ -39,8 +39,8 @@
     display: inline-block;
     font-weight: 300;
     color: inherit;
-
     border: 2px solid transparent;
+    animation: heart2 0.5s ease-in-out;
 
 
     &:hover {
@@ -50,7 +50,7 @@
         -webkit-text-fill-color: transparent !important;
         display: inline-block;
         font-weight: 900;
-        animation: heart 0.3s ease-in-out;
+        animation: heart 1s ease-in-out;
 
     }
 

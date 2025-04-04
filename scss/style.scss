@@ -1,9 +1,127 @@
+@import "mixins";
+
+
+//* VARIABLE //*
+
+$grey-brackground: #F6F6F6;
+$green-color: #99E2D0;
+
+
+//* KEYFRAMES //*
+
+@keyframes heart {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes heart2 {
+    0% {
+        opacity: 0;
+        scale:0; 
+    }
+
+    100% {
+        opacity: 1;
+        scale:1;
+    }
+}
+
+
+@keyframes wave {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-55px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+        visibility: hidden;
+        display: none;
+    }
+}
+
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+//* ANIMATIONS //*
+
+.animation_menu {
+    display: inline;
+
+    .M1 {
+        opacity: 0;
+        animation: fadeInUp 0.8s ease-out forwards;
+        animation-delay: 0.4s;
+    }
+
+    .M2 {
+        opacity: 0;
+        animation: fadeInUp 0.8s ease-out forwards;
+        animation-delay: 0.9s;
+    }
+
+    .M3 {
+        opacity: 0;
+        animation: fadeInUp 0.8s ease-out forwards;
+        animation-delay: 1.3s;
+    }
+
+}
+
+
 body {
     font-family: 'roboto';
     margin: 0%;
 }
 
-@import "mixins";
+
+button::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.15);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    z-index: 2;
+    box-shadow: none;
+}
+
+button:hover {
+    box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.4);
+}
+
+button:hover::after {
+    opacity: 1;
+    box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.4);
+}
 
 
 
@@ -41,29 +159,6 @@ body {
 
 
 
-@keyframes wave {
-    0% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-55px);
-    }
-
-    100% {
-        transform: translateY(0);
-    }
-}
-
-@keyframes fadeOut {
-    to {
-        opacity: 0;
-        visibility: hidden;
-        display: none;
-    }
-}
-
-
 //* HEADER //*
 
 .homepage__header {
@@ -97,6 +192,8 @@ body {
 }
 
 
+
+
 .menu__header {
     display: flex;
     justify-content: center;
@@ -107,6 +204,11 @@ body {
         left: 15px;
         color: #353535;
         padding-top: 25px;
+
+        @media (min-width: 1024px) {
+            left:30px;
+            font-size: large;
+        }
     }
 
     .logo {
@@ -120,61 +222,6 @@ body {
 
 
 //* MAIN //*
-
-//* MIXINS //*
-@keyframes heart {
-    0% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 1;
-    }
-}
-
-@keyframes heart2 {
-    0% {
-        opacity: 0;
-        scale:0; 
-    }
-
-    100% {
-        opacity: 1;
-        scale:1;
-    }
-}
-
-button::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(255, 255, 255, 0.15);
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-    z-index: 2;
-    box-shadow: none;
-}
-
-button:hover {
-    box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.4);
-}
-
-button:hover::after {
-    opacity: 1;
-    box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.4);
-}
-
-
-
-//* VARIABLE //*
-
-$grey-brackground: #F6F6F6;
-$green-color: #99E2D0;
-
 
 
 //* HOMEPAGE //*
@@ -230,12 +277,20 @@ $green-color: #99E2D0;
 
     h2 {
         margin: 0px;
-        padding-left: 10px;
+        padding-left: 20px;
         padding-top: 40px;
         padding-bottom: 25px;
 
+        @media (min-width:768px) {
+            padding-left:28px;
+        }
+
         @media (min-width: 1024px) {
-            padding-left: 187px;
+            padding-left: 140px;
+        }
+
+        @media (min-width: 1440px) {
+            padding-left: 180px;
         }
     }
 
@@ -245,6 +300,8 @@ $green-color: #99E2D0;
         @include column;
         align-items: center;
         gap: 15px;
+        margin-left: 10px;
+        margin-right: 10px;
 
         @media (min-width: 1024px) {
             display: flex;
@@ -254,7 +311,7 @@ $green-color: #99E2D0;
         }
 
         .card {
-            width: 80%;
+            width: 90%;
             height: 72.38px;
             background-color: $grey-brackground;
             border-radius: 20px;
@@ -280,15 +337,32 @@ $green-color: #99E2D0;
                 font-weight: 500;
                 font-size: 14px;
 
+                @media (min-width: 1024px) {
+                    margin-right: 10px;
+                }
+
+                @media (min-width: 1440px) {
+                    margin-right: 20px;
+                }
+
             }
 
             .fa-solid {
                 color: grey;
                 padding-right: 25px;
+
+                @media (min-width: 1024px) {
+                    padding-right: 10px;
+                }
+
+                @media (min-width: 1440px) {
+                    padding-right: 20px;
+                }
             }
 
             @media (min-width: 1024px) {
                 width: 23%;
+                padding-right: 10px;
             }
         }
 
@@ -307,7 +381,7 @@ $green-color: #99E2D0;
 }
 
 .Fonctionnement:hover .fa-solid {
-    color: violet;
+    color: #9356DC;
 }
 
 .Restaurants {
@@ -319,12 +393,20 @@ $green-color: #99E2D0;
 
     h2 {
         margin: 0;
-        padding-left: 10px;
-        padding-bottom: 25px;
+        padding-left: 20px;
+        padding-bottom: 10px;
         padding-top: 40px;
+        
+        @media (min-width:768px) {
+            padding-left:28px;
+        }
 
         @media (min-width: 1024px) {
-            padding-left: 187px;
+            padding-left: 140px;
+        }
+
+        @media (min-width: 1440px) {
+            padding-left: 180px;
         }
     }
 
@@ -333,7 +415,7 @@ $green-color: #99E2D0;
         @include column;
         align-items: center;
         gap: 20px;
-        margin: 5px;
+        margin: 15px;
 
         @media (min-width: 1024px) {
             display: flex;
@@ -354,6 +436,10 @@ $green-color: #99E2D0;
 
         @media (min-width: 1024px) {
             width: 35%;
+        }
+
+        @media (min-width: 1440px) {
+            margin-right: 25px;
         }
     }
 
@@ -410,11 +496,7 @@ $green-color: #99E2D0;
 
 
 
-
-
 //* PAGES MENU RESTAURANTS  //*
-
-
 
 .photo__restaurant {
     width: 100%;
@@ -449,40 +531,8 @@ $green-color: #99E2D0;
             width: 80%;
         }
 
-        .animation_menu {
-            display: inline;
 
-            .M1 {
-                opacity: 0;
-                animation: fadeInUp 0.8s ease-out forwards;
-                animation-delay: 0.4s;
-            }
 
-            .M2 {
-                opacity: 0;
-                animation: fadeInUp 0.8s ease-out forwards;
-                animation-delay: 0.9s;
-            }
-
-            .M3 {
-                opacity: 0;
-                animation: fadeInUp 0.8s ease-out forwards;
-                animation-delay: 1.3s;
-            }
-
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
 
 
         .card__title {
@@ -490,9 +540,12 @@ $green-color: #99E2D0;
             justify-content: space-between;
             padding-top: 20px;
             padding-left: 20px;
-            padding-right: 30px;
-            //align-items: center;
-            //gap: 15px;
+            padding-right: 45px;
+
+            @media (min-width: 768px) {
+                display: flex;
+                justify-content: center;
+            }
 
             @media (min-width:1024px) {
                 display: flex;
@@ -676,11 +729,11 @@ footer {
             width: 20%;
             padding-top: 25px;
             padding-left: 25px;
+            object-fit: cover;
 
             @media (min-width: 1024px) {
                 width: 6%;
                 order: 1;
-
             }
 
         }
@@ -689,7 +742,6 @@ footer {
         .fa-solid {
             padding-right: 8px;
         }
-
 
 
         ul {

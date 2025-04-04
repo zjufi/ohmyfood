@@ -1,6 +1,95 @@
+@keyframes heart {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes heart2 {
+  0% {
+    opacity: 0;
+    scale: 0;
+  }
+  100% {
+    opacity: 1;
+    scale: 1;
+  }
+}
+@keyframes wave {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-55px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    visibility: hidden;
+    display: none;
+  }
+}
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animation_menu {
+  display: inline;
+}
+.animation_menu .M1 {
+  opacity: 0;
+  animation: fadeInUp 0.8s ease-out forwards;
+  animation-delay: 0.4s;
+}
+.animation_menu .M2 {
+  opacity: 0;
+  animation: fadeInUp 0.8s ease-out forwards;
+  animation-delay: 0.9s;
+}
+.animation_menu .M3 {
+  opacity: 0;
+  animation: fadeInUp 0.8s ease-out forwards;
+  animation-delay: 1.3s;
+}
+
 body {
   font-family: "roboto";
   margin: 0%;
+}
+
+button::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.15);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  z-index: 2;
+  box-shadow: none;
+}
+
+button:hover {
+  box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.4);
+}
+
+button:hover::after {
+  opacity: 1;
+  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.4);
 }
 
 .loader {
@@ -32,24 +121,6 @@ body {
   }
 }
 
-@keyframes wave {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-55px);
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
-@keyframes fadeOut {
-  to {
-    opacity: 0;
-    visibility: hidden;
-    display: none;
-  }
-}
 .homepage__header {
   display: flex;
   justify-content: center;
@@ -86,51 +157,15 @@ body {
   color: #353535;
   padding-top: 25px;
 }
+@media (min-width: 1024px) {
+  .menu__header .fa-solid {
+    left: 30px;
+    font-size: large;
+  }
+}
 .menu__header .logo {
   padding-top: 20px;
   padding-bottom: 15px;
-}
-
-@keyframes heart {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-@keyframes heart2 {
-  0% {
-    opacity: 0;
-    scale: 0;
-  }
-  100% {
-    opacity: 1;
-    scale: 1;
-  }
-}
-button::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(255, 255, 255, 0.15);
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-  z-index: 2;
-  box-shadow: none;
-}
-
-button:hover {
-  box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.4);
-}
-
-button:hover::after {
-  opacity: 1;
-  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.4);
 }
 
 .section__one {
@@ -191,13 +226,23 @@ button:hover::after {
 }
 .Fonctionnement h2 {
   margin: 0px;
-  padding-left: 10px;
+  padding-left: 20px;
   padding-top: 40px;
   padding-bottom: 25px;
 }
+@media (min-width: 768px) {
+  .Fonctionnement h2 {
+    padding-left: 28px;
+  }
+}
 @media (min-width: 1024px) {
   .Fonctionnement h2 {
-    padding-left: 187px;
+    padding-left: 140px;
+  }
+}
+@media (min-width: 1440px) {
+  .Fonctionnement h2 {
+    padding-left: 180px;
   }
 }
 .Fonctionnement .cards {
@@ -205,6 +250,8 @@ button:hover::after {
   flex-direction: column;
   align-items: center;
   gap: 15px;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 @media (min-width: 1024px) {
   .Fonctionnement .cards {
@@ -215,7 +262,7 @@ button:hover::after {
   }
 }
 .Fonctionnement .cards .card {
-  width: 80%;
+  width: 90%;
   height: 72.38px;
   background-color: #F6F6F6;
   border-radius: 20px;
@@ -242,13 +289,34 @@ button:hover::after {
   font-weight: 500;
   font-size: 14px;
 }
+@media (min-width: 1024px) {
+  .Fonctionnement .cards .card .number {
+    margin-right: 10px;
+  }
+}
+@media (min-width: 1440px) {
+  .Fonctionnement .cards .card .number {
+    margin-right: 20px;
+  }
+}
 .Fonctionnement .cards .card .fa-solid {
   color: grey;
   padding-right: 25px;
 }
 @media (min-width: 1024px) {
+  .Fonctionnement .cards .card .fa-solid {
+    padding-right: 10px;
+  }
+}
+@media (min-width: 1440px) {
+  .Fonctionnement .cards .card .fa-solid {
+    padding-right: 20px;
+  }
+}
+@media (min-width: 1024px) {
   .Fonctionnement .cards .card {
     width: 23%;
+    padding-right: 10px;
   }
 }
 .Fonctionnement .cards .card:hover .fa-solid {
@@ -262,7 +330,7 @@ button:hover::after {
 }
 
 .Fonctionnement:hover .fa-solid {
-  color: violet;
+  color: #9356DC;
 }
 
 .Restaurants {
@@ -273,13 +341,23 @@ button:hover::after {
 }
 .Restaurants h2 {
   margin: 0;
-  padding-left: 10px;
-  padding-bottom: 25px;
+  padding-left: 20px;
+  padding-bottom: 10px;
   padding-top: 40px;
+}
+@media (min-width: 768px) {
+  .Restaurants h2 {
+    padding-left: 28px;
+  }
 }
 @media (min-width: 1024px) {
   .Restaurants h2 {
-    padding-left: 187px;
+    padding-left: 140px;
+  }
+}
+@media (min-width: 1440px) {
+  .Restaurants h2 {
+    padding-left: 180px;
   }
 }
 .Restaurants .cards {
@@ -287,7 +365,7 @@ button:hover::after {
   flex-direction: column;
   align-items: center;
   gap: 20px;
-  margin: 5px;
+  margin: 15px;
 }
 @media (min-width: 1024px) {
   .Restaurants .cards {
@@ -309,6 +387,11 @@ button:hover::after {
 @media (min-width: 1024px) {
   .Restaurants .card {
     width: 35%;
+  }
+}
+@media (min-width: 1440px) {
+  .Restaurants .card {
+    margin-right: 25px;
   }
 }
 .Restaurants .division {
@@ -403,40 +486,18 @@ button:hover::after {
     width: 80%;
   }
 }
-.menu .card .animation_menu {
-  display: inline;
-}
-.menu .card .animation_menu .M1 {
-  opacity: 0;
-  animation: fadeInUp 0.8s ease-out forwards;
-  animation-delay: 0.4s;
-}
-.menu .card .animation_menu .M2 {
-  opacity: 0;
-  animation: fadeInUp 0.8s ease-out forwards;
-  animation-delay: 0.9s;
-}
-.menu .card .animation_menu .M3 {
-  opacity: 0;
-  animation: fadeInUp 0.8s ease-out forwards;
-  animation-delay: 1.3s;
-}
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
 .menu .card .card__title {
   display: flex;
   justify-content: space-between;
   padding-top: 20px;
   padding-left: 20px;
-  padding-right: 30px;
+  padding-right: 45px;
+}
+@media (min-width: 768px) {
+  .menu .card .card__title {
+    display: flex;
+    justify-content: center;
+  }
 }
 @media (min-width: 1024px) {
   .menu .card .card__title {
@@ -617,6 +678,8 @@ footer .nav__footer img {
   width: 20%;
   padding-top: 25px;
   padding-left: 25px;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 @media (min-width: 1024px) {
   footer .nav__footer img {
